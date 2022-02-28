@@ -1,0 +1,288 @@
+{
+  "Oradea": {
+    "x": 165,
+    "y": 31.5,
+    "neighbors": [
+      {
+        "name": "Zerind",
+        "edgeCost": 71
+      },
+      {
+        "name": "Sibiu",
+        "edgeCost": 151
+      }
+    ]
+  },
+  "Zerind": {
+    "x": 89,
+    "y": 129.5,
+    "neighbors": [
+      {
+        "name": "Arad",
+        "edgeCost": 75
+      },
+      {
+        "name": "Oradea",
+        "edgeCost": 71
+      }
+    ]
+  },
+  "Arad": {
+    "x": 62,
+    "y": 240.5,
+    "neighbors": [
+      {
+        "name": "Sibiu",
+        "edgeCost": 140
+      },
+      {
+        "name": "Timisoara",
+        "edgeCost": 118
+      },
+      {
+        "name": "Zerind",
+        "edgeCost": 75
+      }
+    ]
+  },
+  "Timisoara": {
+    "x": 98,
+    "y": 412.5,
+    "neighbors": [
+      {
+        "name": "Lugoj",
+        "edgeCost": 111
+      },
+      {
+        "name": "Arad",
+        "edgeCost": 118
+      }
+    ]
+  },
+  "Sibiu": {
+    "x": 339,
+    "y": 277.5,
+    "neighbors": [
+      {
+        "name": "Fagaras",
+        "edgeCost": 99
+      },
+      {
+        "name": "Rimnicu Vilcea",
+        "edgeCost": 80
+      },
+      {
+        "name": "Arad",
+        "edgeCost": 140
+      },
+      {
+        "name": "Oradea",
+        "edgeCost": 151
+      }
+    ]
+  },
+  "Fagaras": {
+    "x": 558,
+    "y": 258.5,
+    "neighbors": [
+      {
+        "name": "Bucharest",
+        "edgeCost": 211
+      },
+      {
+        "name": "Sibiu",
+        "edgeCost": 99
+      }
+    ]
+  },
+  "Rimnicu Vilcea": {
+    "x": 419,
+    "y": 383.5,
+    "neighbors": [
+      {
+        "name": "Craiova",
+        "edgeCost": 146
+      },
+      {
+        "name": "Pitesti",
+        "edgeCost": 97
+      },
+      {
+        "name": "Sibiu",
+        "edgeCost": 80
+      }
+    ]
+  },
+  "Lugoj": {
+    "x": 238,
+    "y": 494.5,
+    "neighbors": [
+      {
+        "name": "Mehadia",
+        "edgeCost": 70
+      },
+      {
+        "name": "Timisoara",
+        "edgeCost": 111
+      }
+    ]
+  },
+  "Mehadia": {
+    "x": 289,
+    "y": 597.5,
+    "neighbors": [
+      {
+        "name": "Drobeta",
+        "edgeCost": 75
+      },
+      {
+        "name": "Lugoj",
+        "edgeCost": 70
+      }
+    ]
+  },
+  "Drobeta": {
+    "x": 290,
+    "y": 677.5,
+    "neighbors": [
+      {
+        "name": "Craiova",
+        "edgeCost": 120
+      },
+      {
+        "name": "Mehadia",
+        "edgeCost": 75
+      }
+    ]
+  },
+  "Craiova": {
+    "x": 550,
+    "y": 661.5,
+    "neighbors": [
+      { "name": "Rimnicu Vilcea", "edgeCost": 146 },
+      { "name": "Pitesti", "edgeCost": 138 },
+      { "name": "Drobeta", "edgeCost": 120 }
+    ]
+  },
+  "Pitesti": {
+    "x": 605,
+    "y": 455.5,
+    "neighbors": [
+      {
+        "name": "Bucharest",
+        "edgeCost": 101
+      },
+      {
+        "name": "Rimnicu Vilcea",
+        "edgeCost": 97
+      },
+      {
+        "name": "Craiova",
+        "edgeCost": 138
+      }
+    ]
+  },
+  "Urziceni": {
+    "x": 927,
+    "y": 505.5,
+    "neighbors": [
+      { "name": "Vaslui", "edgeCost": 142 },
+      { "name": "Hirsova", "edgeCost": 98 },
+      { "name": "Bucharest", "edgeCost": 85 }
+    ]
+  },
+  "Hirsova": {
+    "x": 1092,
+    "y": 497.5,
+    "neighbors": [
+      {
+        "name": "Eforie",
+        "edgeCost": 86
+      },
+      {
+        "name": "Urziceni",
+        "edgeCost": 98
+      }
+    ]
+  },
+  "Eforie": {
+    "x": 1123,
+    "y": 633.5,
+    "neighbors": [
+      {
+        "name": "Hirsova",
+        "edgeCost": 86
+      }
+    ]
+  },
+  "Vaslui": {
+    "x": 1071,
+    "y": 330.5,
+    "neighbors": [
+      {
+        "name": "Iasi",
+        "edgeCost": 92
+      },
+      {
+        "name": "Urziceni",
+        "edgeCost": 142
+      }
+    ]
+  },
+  "Iasi": {
+    "x": 984,
+    "y": 143.5,
+    "neighbors": [
+      {
+        "name": "Neamt",
+        "edgeCost": 87
+      },
+      {
+        "name": "Vaslui",
+        "edgeCost": 92
+      }
+    ]
+  },
+  "Neamt": {
+    "x": 787,
+    "y": 86.5,
+    "neighbors": [
+      {
+        "name": "Iasi",
+        "edgeCost": 87
+      }
+    ]
+  },
+  "Bucharest": {
+    "x": 822,
+    "y": 543.5,
+    "neighbors": [
+      {
+        "name": "Giurgiu",
+        "edgeCost": 90
+      },
+      {
+        "name": "Urziceni",
+        "edgeCost": 85
+      },
+      {
+        "name": "Pitesti",
+        "edgeCost": 101
+      },
+      {
+        "name": "Fagaras",
+        "edgeCost": 211
+      }
+    ]
+  },
+  "Giurgiu": {
+    "x": 785,
+    "y": 663.5,
+    "neighbors": [
+      {
+        "name": "Bucharest",
+        "edgeCost": 90
+      }
+    ]
+  }
+}

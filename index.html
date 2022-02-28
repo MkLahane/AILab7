@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Perceptron</title>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.4.0/lib/p5.js"></script>
+    <script src="index.js"></script>
+    <script src="node.js"></script>
+    <script src="priorityqueue.js"></script>
+    <script src="dijkstra.js"></script>
+    <script src="astar.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=M+PLUS+1+Code:wght@300&family=Poppins:wght@300&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <style>
+      body {
+        min-height: 100vh;
+        background: #fff6b2;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Poppins";
+        flex-direction: column;
+      }
+      ul {
+        display: flex;
+        list-style: none;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 0;
+      }
+      li {
+        cursor: pointer;
+        background: white;
+        color: black;
+        font-style: bolder;
+        font-size: 2rem;
+        padding: 10px 30px;
+        margin: 0px 10px;
+      }
+      li:hover {
+        background: black;
+        color: white;
+      }
+      .selected {
+        background: black;
+        color: white;
+      }
+    </style>
+    <ul>
+      <li id="dijkstra">Dijkstra</li>
+      <li id="a*">A*</li>
+      <li id="clear">CLEAR</li>
+    </ul>
+  </body>
+</html>
