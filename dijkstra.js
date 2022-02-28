@@ -18,7 +18,7 @@ class Dijkstra {
     this.endNode = node;
   }
   update() {
-    if (frameCount % 1 === 0) {
+    if (frameCount % 5 === 0) {
       if (!this.pq.isEmpty()) {
         this.currentNode = this.pq.poll();
         this.currentNode.visited = true;

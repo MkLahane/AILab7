@@ -24,7 +24,11 @@ class Astar {
     this.foundPath = false;
   }
   update() {
-    if (this.startNode !== null && this.endNode !== null) {
+    if (
+      this.startNode !== null &&
+      this.endNode !== null &&
+      frameCount % 5 === 0
+    ) {
       if (!this.pq.isEmpty() && !this.foundPath) {
         this.currentNode = this.pq.poll();
         if (this.currentNode.name === this.endNode.name) {
