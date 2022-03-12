@@ -1,4 +1,48 @@
 function heuristic(a, b) {
+  if (b.name === "Bucharest") {
+    switch (a.name) {
+      case "Arad":
+        return 366;
+      case "Bucharest":
+        return 0;
+      case "Craiova":
+        return 160;
+      case "Drobeta":
+        return 242;
+      case "Eforie":
+        return 161;
+      case "Fagaras":
+        return 193;
+      case "Giurgiu":
+        return 77;
+      case "Hirsova":
+        return 151;
+      case "Iasi":
+        return 226;
+      case "Lugoj":
+        return 244;
+      case "Mehadia":
+        return 241;
+      case "Neamt":
+        return 234;
+      case "Oradea":
+        return 380;
+      case "Pitesti":
+        return 100;
+      case "Rimnicu Vilcea":
+        return 176;
+      case "Sibiu":
+        return 253;
+      case "Timisoara":
+        return 329;
+      case "Urziceni":
+        return 80;
+      case "Vaslui":
+        return 199;
+      case "Zerind":
+        return 374;
+    }
+  }
   return dist(a.pos.x, a.pos.y, b.pos.x, b.pos.y);
 }
 
@@ -18,7 +62,7 @@ class Astar {
     clearNodes();
     this.startNode.fCost = 0;
     this.startNode.gCost = 0;
-    this.startNode.cost = this.startNode.gCost;
+    this.startNode.cost = this.startNode.gCostx;
     this.pq = new MinHeap();
     this.pq.add(this.startNode);
     this.foundPath = false;
@@ -38,18 +82,17 @@ class Astar {
         this.currentNode.visited = true;
         for (let neighbor of this.currentNode.neighbors) {
           let neighborNode = getNode(neighbor.name);
-          if (neighborNode.visited) {
-            continue;
-          }
-          let tempGCost = this.currentNode.gCost + neighbor.edgeCost;
-          if (tempGCost < neighborNode.gCost) {
-            neighborNode.parent = this.currentNode;
-            neighborNode.gCost = tempGCost;
+          if (!neighborNode.visited) {
+            let newGCost = this.currentNode.gCost + neighbor.edgeCost;
+            if (newGCost < neighborNode.gCost) {
+              neighborNode.parent = this.currentNode;
+              neighborNode.gCost = newGCost;
+            }
             neighborNode.cost =
-              tempGCost + heuristic(neighborNode, this.endNode);
+              neighborNode.gCost + heuristic(neighborNode, this.endNode);
             neighborNode.fCost = this.currentNode.fCost + neighbor.edgeCost;
+            this.pq.add(neighborNode);
           }
-          this.pq.add(neighborNode);
         }
       } else {
         this.foundPath = true;

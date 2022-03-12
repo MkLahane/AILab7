@@ -48,7 +48,9 @@ class MinHeap {
     this.heapifyDown();
     return item;
   }
-
+  peek() {
+    return this.items[0];
+  }
   add(item) {
     this.items[this.size] = item;
     this.size++;
@@ -76,7 +78,10 @@ class MinHeap {
 
   heapifyUp() {
     let index = this.size - 1;
-    while (this.hasParent(index) && this.parent(index) > this.items[index]) {
+    while (
+      this.hasParent(index) &&
+      this.parent(index) > this.items[index].cost
+    ) {
       this.swap(this.getParentIndex(index), index);
       index = this.getParentIndex(index);
     }
