@@ -81,14 +81,8 @@ function draw() {
   }
   switch (currentState) {
     case "dijkstra": {
-      if (dijkstra.isStartNodeSet) {
-        dijkstra.render();
-        dijkstra.update();
-      } else {
-        fill(0, 150);
-        textSize(20);
-        text("Select a start node to initiate the algorithm", 280, 30);
-      }
+      dijkstra.render();
+      dijkstra.update();
       break;
     }
     case "a*": {
@@ -200,16 +194,14 @@ function mousePressed() {
     return;
   }
   if (currentState === "dijkstra") {
-    if (!dijkstra.isStartNodeSet) {
+    if (dijkstra.startNode === null) {
       dijkstra.setStart(hoveringNode);
-    } else if (dijkstra.foundPath) {
+    } else {
       dijkstra.setEnd(hoveringNode);
     }
   } else if (currentState === "a*") {
     if (astar.startNode === null) {
       astar.setStart(hoveringNode);
-    } else if (astar.endNode === null) {
-      astar.setEnd(hoveringNode);
     } else {
       astar.setEnd(hoveringNode);
     }

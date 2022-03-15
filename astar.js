@@ -71,7 +71,7 @@ class Astar {
     if (
       this.startNode !== null &&
       this.endNode !== null &&
-      frameCount % 5 === 0
+      frameCount % 20 === 0
     ) {
       if (!this.pq.isEmpty() && !this.foundPath) {
         this.currentNode = this.pq.poll();

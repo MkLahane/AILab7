@@ -2,25 +2,33 @@ class Dijkstra {
   constructor() {
     this.pq = new MinHeap();
     this.currentNode = null;
-    this.isStartNodeSet = false;
     this.foundPath = false;
     this.startNode = null;
     this.endNode = null;
   }
   setStart(node) {
-    clearNodes();
-    node.cost = 0;
-    this.isStartNodeSet = true;
-    this.pq.add(node);
     this.startNode = node;
   }
   setEnd(node) {
     this.endNode = node;
+    clearNodes();
+    this.pq = new MinHeap();
+    this.startNode.cost = 0;
+    this.pq.add(this.startNode);
+    this.foundPath = false;
   }
   update() {
-    if (frameCount % 5 === 0) {
+    if (
+      this.startNode !== null &&
+      this.endNode !== null &&
+      frameCount % 20 === 0
+    ) {
       if (!this.pq.isEmpty()) {
         this.currentNode = this.pq.poll();
+        if (this.currentNode.name === this.endNode.name) {
+          this.foundPath = true;
+          return;
+        }
         this.currentNode.visited = true;
         for (let neighbor of this.currentNode.neighbors) {
           let neighborNode = getNode(neighbor.name);
@@ -67,7 +75,13 @@ class Dijkstra {
       path = nodes;
       fill(0, 150);
       textSize(20);
-      text("Calculating Paths........", 280, 30);
+      if (this.startNode === null) {
+        text("Set start city", 280, 30);
+      } else if (this.endNode === null) {
+        text("Set end city", 280, 30);
+      } else {
+        text("Calculating Paths........", 280, 30);
+      }
     }
     for (let node of path) {
       if (node.parent !== null) {
@@ -89,7 +103,9 @@ class Dijkstra {
     if (this.currentNode !== null) {
       this.currentNode.renderCurrent();
     }
-    drawCityName(this.startNode);
+    if (this.startNode !== null) {
+      drawCityName(this.startNode);
+    }
     if (this.endNode !== null) {
       drawCityName(this.endNode);
     }
